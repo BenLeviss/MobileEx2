@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobileex2.R
 import com.example.mobileex2.Student
+import com.example.mobileex2.StudentDetailsActivity
 
 class StudentRecyclerAdapter(private val students: List<Student>) :
     RecyclerView.Adapter<StudentRecyclerAdapter.StudentViewHolder>() {
@@ -28,6 +29,13 @@ class StudentRecyclerAdapter(private val students: List<Student>) :
         holder.idTv.text = student.id
         holder.checkBox.isChecked = student.isChecked
 
+        // When the whole row is clicked
+        holder.itemView.setOnClickListener {
+            val intent = android.content.Intent(it.context, StudentDetailsActivity::class.java)
+            // We pass the position of the student so the next screen knows which one to show
+            intent.putExtra("student_position", position)
+            it.context.startActivity(intent)
+        }
 
         holder.checkBox.setOnClickListener {
             student.isChecked = holder.checkBox.isChecked

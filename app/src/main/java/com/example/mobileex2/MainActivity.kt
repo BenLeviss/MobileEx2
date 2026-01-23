@@ -1,6 +1,7 @@
 package com.example.mobileex2
 
 import StudentRecyclerAdapter
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -21,5 +22,12 @@ class MainActivity : AppCompatActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.students_recycler_view)
         recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         recyclerView.adapter = StudentRecyclerAdapter(Model.data)
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    override fun onResume() {
+        super.onResume()
+        // This tells the list: "Hey, some data changed, redraw the rows!"
+        findViewById<RecyclerView>(R.id.students_recycler_view).adapter?.notifyDataSetChanged()
     }
 }
