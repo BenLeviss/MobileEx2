@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("NotifyDataSetChanged")
     override fun onResume() {
         super.onResume()
-        // This tells the list: "Hey, some data changed, redraw the rows!"
         findViewById<RecyclerView>(R.id.students_recycler_view).adapter?.notifyDataSetChanged()
     }
 }

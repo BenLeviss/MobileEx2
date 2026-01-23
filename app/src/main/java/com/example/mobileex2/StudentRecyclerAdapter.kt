@@ -32,7 +32,6 @@ class StudentRecyclerAdapter(private val students: List<Student>) :
         // When the whole row is clicked
         holder.itemView.setOnClickListener {
             val intent = android.content.Intent(it.context, StudentDetailsActivity::class.java)
-            // We pass the position of the student so the next screen knows which one to show
             intent.putExtra("student_position", position)
             it.context.startActivity(intent)
         }
