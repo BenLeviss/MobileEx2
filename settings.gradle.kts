@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "MobileEx2"
 include(":app")
+ 
