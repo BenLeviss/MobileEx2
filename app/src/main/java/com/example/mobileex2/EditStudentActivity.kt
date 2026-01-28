@@ -23,10 +23,6 @@ class EditStudentActivity : AppCompatActivity() {
         binding = ActivityEditStudentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnBack.setOnClickListener {
-            finish()
-        }
-
         val studentId = intent.getStringExtra("id")
 
         val student = Model.shared.Students.find { it.id == studentId }
