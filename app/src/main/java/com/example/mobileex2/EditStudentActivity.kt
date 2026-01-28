@@ -16,6 +16,7 @@ class EditStudentActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditStudentBinding
     private var student: Student? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
