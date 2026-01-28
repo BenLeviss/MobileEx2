@@ -12,6 +12,8 @@ import androidx.core.view.WindowInsetsCompat
 
 
 class StudentDetailsActivity : AppCompatActivity() {
+    private lateinit var student: Student
+    private var position: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,34 +21,15 @@ class StudentDetailsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_student_details)
 
         val backBtn: Button = findViewById(R.id.btn_back)
+        val editBtn: Button = findViewById(R.id.details_edit_btn)
 
-        val position = intent.getIntExtra("student_position", -1)
+        position = intent.getIntExtra("student_position", -1)
 
         if (position == -1) {
             finish()
             return
         }
 
-        val student = Model.shared.Students.getOrNull(position)?: run {
-            finish()
-            return
-        }
-
-        // Find the Views
-        val nameTv: TextView = findViewById(R.id.details_name)
-        val idTv: TextView = findViewById(R.id.details_id)
-        val phoneTv: TextView = findViewById(R.id.details_phone)
-        val addressTv: TextView = findViewById(R.id.details_address)
-        val checkBox: CheckBox = findViewById(R.id.details_checked)
-        val editBtn: Button = findViewById(R.id.details_edit_btn)
-
-        nameTv.text = "name: ${student.name}"
-        idTv.text = "id: ${student.id}"
-        phoneTv.text = "phone: ${student.phone}"
-        addressTv.text = "address: ${student.address}"
-        checkBox.isChecked = student.isChecked
-
-        // Handle Edit button click
         editBtn.setOnClickListener {
             val intent = Intent(this, EditStudentActivity::class.java)
             intent.putExtra("id", student.id)
@@ -56,5 +39,23 @@ class StudentDetailsActivity : AppCompatActivity() {
         backBtn.setOnClickListener {
             finish()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        student = Model.shared.Students.getOrNull(position) ?: return
+
+        val nameTv: TextView = findViewById(R.id.details_name)
+        val idTv: TextView = findViewById(R.id.details_id)
+        val phoneTv: TextView = findViewById(R.id.details_phone)
+        val addressTv: TextView = findViewById(R.id.details_address)
+        val CheckBox: CheckBox = findViewById(R.id.details_checked)
+
+        nameTv.text = "name: ${student.name}"
+        idTv.text = "id: ${student.id}"
+        phoneTv.text = "phone: ${student.phone}"
+        addressTv.text = "address: ${student.address}"
+        CheckBox.isChecked = student.isChecked
     }
 }
