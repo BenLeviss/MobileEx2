@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         }
         val recyclerView: RecyclerView = findViewById(R.id.students_recycler_view)
         recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
-        recyclerView.adapter = StudentRecyclerAdapter(Model.data)
+        recyclerView.adapter = StudentRecyclerAdapter(Model.shared.Students)
     }
 
     @SuppressLint("NotifyDataSetChanged")
