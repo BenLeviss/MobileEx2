@@ -18,6 +18,8 @@ class StudentDetailsActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_student_details)
 
+        val backBtn: Button = findViewById(R.id.btn_back)
+
         val position = intent.getIntExtra("student_position", -1)
 
         if (position == -1) {
@@ -51,5 +53,8 @@ class StudentDetailsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        backBtn.setOnClickListener {
+            finish()
+        }
     }
 }

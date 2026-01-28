@@ -16,11 +16,16 @@ class EditStudentActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditStudentBinding
     private var student: Student? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityEditStudentBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
 
         val studentId = intent.getStringExtra("id")
 

@@ -8,7 +8,6 @@
     android:background="#E8F5E9"
     tools:context=".new_student">
 
-
     <!-- Card -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardNewStudent"
