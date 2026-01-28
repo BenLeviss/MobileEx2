@@ -11,8 +11,6 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.mobileex2.databinding.ActivityNewStudentBinding
 
 class new_student : AppCompatActivity() {
-    private lateinit var onClickListener: () -> Unit
-
     private lateinit var binding: ActivityNewStudentBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
