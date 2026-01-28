@@ -21,11 +21,11 @@ class EditStudentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityEditStudentBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(binding.root) //github.com/BenLeviss/MobileEx2/pull/8
 
         val studentId = intent.getStringExtra("id")
 
-        val student = Model.shared.Students.find { it.id == studentId }
+        student = Model.shared.Students.find { it.id == studentId }
 
 
         student?.let { s ->
@@ -33,6 +33,8 @@ class EditStudentActivity : AppCompatActivity() {
             binding.editStudentIdEt.setText(s.id)
             binding.editStudentPhoneEt.setText(s.phone)
             binding.editStudentAddressEt.setText(s.address)
+            binding.editStudentCheckedCb.isChecked = s.isChecked
+
 
             binding.btnSave.setOnClickListener {
                 saveStudent()
@@ -55,6 +57,7 @@ class EditStudentActivity : AppCompatActivity() {
         val id = binding.editStudentIdEt.text.toString()
         val phone = binding.editStudentPhoneEt.text.toString()
         val address = binding.editStudentAddressEt.text.toString()
+        val isChecked = binding.editStudentCheckedCb.isChecked
 
         if (name.isEmpty()) {
             binding.editStudentNameEt.error = "Enter name"
@@ -81,6 +84,7 @@ class EditStudentActivity : AppCompatActivity() {
             this.id = id
             this.phone = phone
             this.address = address
+            this.isChecked = isChecked
         }
 
         finish()
