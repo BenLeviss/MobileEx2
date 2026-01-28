@@ -34,6 +34,7 @@ class new_student : AppCompatActivity() {
         val id = binding.addNewStudentIdEt.text.toString()
         val phone = binding.addNewStudentPhoneEt.text.toString()
         val address = binding.addNewStudentAddressEt.text.toString()
+        val isChecked = binding.addNewStudentCheckboxCb.isChecked
 
         if (name.isEmpty()) {
             binding.addNewStudentNameEt.error = "Enter name"
@@ -60,7 +61,7 @@ class new_student : AppCompatActivity() {
             id = id,
             phone = phone,
             address = address,
-            false
+            isChecked = isChecked
         )
 
         Model.shared.Students.add(student)

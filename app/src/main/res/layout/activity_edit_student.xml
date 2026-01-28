@@ -89,6 +89,29 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/editStudentPhoneEt" />
 
+
+            <TextView
+                android:id="@+id/checked_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="casual"
+                android:text="Checked"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                app:layout_constraintTop_toBottomOf="@id/editStudentAddressEt"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <CheckBox
+                android:id="@+id/editStudentCheckedCb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:buttonTint="#000000"
+                app:layout_constraintBaseline_toBaselineOf="@id/checked_label"
+                app:layout_constraintStart_toEndOf="@id/checked_label" />
+
+
             <!-- Cancel -->
             <Button
                 android:id="@+id/btnCancel"
@@ -101,7 +124,7 @@
                 android:textColor="#1B5E20"
                 app:layout_constraintEnd_toStartOf="@id/btnSave"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editStudentAddressEt"
+                app:layout_constraintTop_toBottomOf="@id/checked_label"
                 app:layout_constraintWidth_percent="0.45" />
 
             <!-- Save -->
@@ -116,7 +139,7 @@
                 android:textColor="@android:color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/btnCancel"
-                app:layout_constraintTop_toBottomOf="@id/editStudentAddressEt"
+                app:layout_constraintTop_toBottomOf="@id/checked_label"
                 app:layout_constraintWidth_percent="0.45" />
 
             <!-- Delete -->

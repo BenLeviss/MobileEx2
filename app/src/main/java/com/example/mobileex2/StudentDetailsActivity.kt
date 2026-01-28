@@ -37,14 +37,14 @@ class StudentDetailsActivity : AppCompatActivity() {
         val idTv: TextView = findViewById(R.id.details_id)
         val phoneTv: TextView = findViewById(R.id.details_phone)
         val addressTv: TextView = findViewById(R.id.details_address)
-       // val checkBox: CheckBox = findViewById(R.id.details_check)
+        val checkBox: CheckBox = findViewById(R.id.details_checked)
         val editBtn: Button = findViewById(R.id.details_edit_btn)
 
         nameTv.text = "name: ${student.name}"
         idTv.text = "id: ${student.id}"
         phoneTv.text = "phone: ${student.phone}"
         addressTv.text = "address: ${student.address}"
-       // checkBox.isChecked = student.isChecked
+        checkBox.isChecked = student.isChecked
 
         // Handle Edit button click
         editBtn.setOnClickListener {
