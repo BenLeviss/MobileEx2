@@ -8,7 +8,7 @@ import com.example.mobileex2.R
 import com.example.mobileex2.Student
 import com.example.mobileex2.StudentDetailsActivity
 
-class StudentRecyclerAdapter(private val students: List<Student>) :
+class StudentRecyclerAdapter(private val students: MutableList<Student>) :
     RecyclerView.Adapter<StudentRecyclerAdapter.StudentViewHolder>() {
 
     class StudentViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -35,6 +35,7 @@ class StudentRecyclerAdapter(private val students: List<Student>) :
             intent.putExtra("student_position", position)
             it.context.startActivity(intent)
         }
+
 
         holder.checkBox.setOnClickListener {
             student.isChecked = holder.checkBox.isChecked

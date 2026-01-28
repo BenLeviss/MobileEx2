@@ -39,7 +39,7 @@
 
             <!-- Name -->
             <EditText
-                android:id="@+id/etName"
+                android:id="@+id/editStudentNameEt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -52,7 +52,7 @@
 
             <!-- ID -->
             <EditText
-                android:id="@+id/etStudentId"
+                android:id="@+id/editStudentIdEt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -61,11 +61,11 @@
                 android:inputType="text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etName" />
+                app:layout_constraintTop_toBottomOf="@id/editStudentNameEt" />
 
             <!-- Phone -->
             <EditText
-                android:id="@+id/etPhone"
+                android:id="@+id/editStudentPhoneEt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -74,11 +74,11 @@
                 android:inputType="phone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etStudentId" />
+                app:layout_constraintTop_toBottomOf="@id/editStudentIdEt" />
 
             <!-- Address -->
             <EditText
-                android:id="@+id/etAddress"
+                android:id="@+id/editStudentAddressEt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -87,7 +87,7 @@
                 android:inputType="textMultiLine"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etPhone" />
+                app:layout_constraintTop_toBottomOf="@id/editStudentPhoneEt" />
 
             <!-- Cancel -->
             <Button
@@ -101,7 +101,7 @@
                 android:textColor="#1B5E20"
                 app:layout_constraintEnd_toStartOf="@id/btnSave"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etAddress"
+                app:layout_constraintTop_toBottomOf="@id/editStudentAddressEt"
                 app:layout_constraintWidth_percent="0.45" />
 
             <!-- Save -->
@@ -116,7 +116,7 @@
                 android:textColor="@android:color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/btnCancel"
-                app:layout_constraintTop_toBottomOf="@id/etAddress"
+                app:layout_constraintTop_toBottomOf="@id/editStudentAddressEt"
                 app:layout_constraintWidth_percent="0.45" />
 
             <!-- Delete -->
