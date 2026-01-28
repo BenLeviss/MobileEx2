@@ -43,7 +43,7 @@
 
             <!-- Name -->
             <EditText
-                android:id="@+id/editTextStudentName"
+                android:id="@+id/addNewStudentNameEt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -56,7 +56,7 @@
 
             <!-- ID -->
             <EditText
-                android:id="@+id/editTextStudentId"
+                android:id="@+id/addNewStudentIdEt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -65,11 +65,11 @@
                 android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editTextStudentName" />
+                app:layout_constraintTop_toBottomOf="@id/addNewStudentNameEt" />
 
             <!-- Phone -->
             <EditText
-                android:id="@+id/editTextPhone"
+                android:id="@+id/addNewStudentPhoneEt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -78,11 +78,11 @@
                 android:inputType="phone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editTextStudentId" />
+                app:layout_constraintTop_toBottomOf="@id/addNewStudentIdEt" />
 
             <!-- Address -->
             <EditText
-                android:id="@+id/editTextAddress"
+                android:id="@+id/addNewStudentAddressEt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -91,7 +91,7 @@
                 android:inputType="textMultiLine"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editTextPhone" />
+                app:layout_constraintTop_toBottomOf="@id/addNewStudentPhoneEt" />
 
             <!-- Cancel Button -->
             <Button
@@ -106,7 +106,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@id/btnSave"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editTextAddress"
+                app:layout_constraintTop_toBottomOf="@id/addNewStudentAddressEt"
                 app:layout_constraintWidth_percent="0.45" />
 
             <!-- Save Button -->
@@ -122,7 +122,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/btnCancel"
-                app:layout_constraintTop_toBottomOf="@id/editTextAddress"
+                app:layout_constraintTop_toBottomOf="@id/addNewStudentAddressEt"
                 app:layout_constraintWidth_percent="0.45" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

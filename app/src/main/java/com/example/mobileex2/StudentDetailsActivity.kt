@@ -22,7 +22,7 @@ class StudentDetailsActivity : AppCompatActivity() {
         }
         val position = intent.getIntExtra("student_position", -1)
         if (position != -1) {
-            val student = Model.data[position]
+            val student = Model.shared.Students[position]
 
             // Find the Views
             val nameTv: TextView = findViewById(R.id.details_name)
