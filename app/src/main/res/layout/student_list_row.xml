@@ -4,42 +4,70 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="8dp">
-
-    <ImageView
-        android:id="@+id/student_row_image"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@mipmap/ic_launcher"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/student_row_name"
-        android:layout_width="0dp"
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Student Name"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/student_row_check"
-        app:layout_constraintStart_toEndOf="@+id/student_row_image"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginVertical="6dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="3dp">
 
-    <TextView
-        android:id="@+id/student_row_id"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="ID: 12345"
-        app:layout_constraintEnd_toEndOf="@+id/student_row_name"
-        app:layout_constraintStart_toStartOf="@+id/student_row_name"
-        app:layout_constraintTop_toBottomOf="@+id/student_row_name" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
 
-    <CheckBox
-        android:id="@+id/student_row_check"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <!-- Circle Student Image -->
+            <ImageView
+                android:id="@+id/student_row_image"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/profile"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <!-- Student Name -->
+            <TextView
+                android:id="@+id/student_row_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Student Name"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1B5E20"
+                app:layout_constraintStart_toEndOf="@id/student_row_image"
+                app:layout_constraintTop_toTopOf="@id/student_row_image"
+                app:layout_constraintEnd_toStartOf="@id/student_row_check"/>
+
+            <!-- Student ID -->
+            <TextView
+                android:id="@+id/student_row_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="ID1010"
+                android:textSize="13sp"
+                android:textColor="#757575"
+                app:layout_constraintStart_toStartOf="@id/student_row_name"
+                app:layout_constraintTop_toBottomOf="@id/student_row_name"
+                app:layout_constraintEnd_toEndOf="@id/student_row_name"/>
+
+            <!-- Checkbox -->
+            <CheckBox
+                android:id="@+id/student_row_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#2E7D32"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
