@@ -1,32 +1,24 @@
 package com.example.mobileex2
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.mobileex2.databinding.ActivityEditStudentBinding
-import com.example.mobileex2.databinding.ActivityNewStudentBinding
-
 
 class EditStudentActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditStudentBinding
     private var student: Student? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityEditStudentBinding.inflate(layoutInflater)
-        setContentView(binding.root) //github.com/BenLeviss/MobileEx2/pull/8
+        setContentView(binding.root)
 
         val studentId = intent.getStringExtra("id")
 
         student = Model.shared.Students.find { it.id == studentId }
-
 
         student?.let { s ->
             binding.editStudentNameEt.setText(s.name)
@@ -35,14 +27,15 @@ class EditStudentActivity : AppCompatActivity() {
             binding.editStudentAddressEt.setText(s.address)
             binding.editStudentCheckedCb.isChecked = s.isChecked
 
-
             binding.btnSave.setOnClickListener {
                 saveStudent()
             }
 
             binding.tvDelete.setOnClickListener {
                 Model.shared.Students.remove(student)
-                finish()
+                val intent = Intent(this, MainActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                startActivity(intent)
             }
 
             binding.btnCancel.setOnClickListener {
@@ -52,7 +45,6 @@ class EditStudentActivity : AppCompatActivity() {
     }
 
     private fun saveStudent() {
-
         val name = binding.editStudentNameEt.text.toString()
         val id = binding.editStudentIdEt.text.toString()
         val phone = binding.editStudentPhoneEt.text.toString()
